@@ -3,8 +3,21 @@
 
 
 
+    html, body {
+        font-family: var(--font-main);
+        color: var(--textColor);
+    }
+    body {
+        padding-bottom: 50vh;
+    }
+
+
     .container {
         max-width: 1310px ;
         padding: 0 15px;
         margin: 0 auto;
+    }
+
+    .none {
+        display: none !important;
     }

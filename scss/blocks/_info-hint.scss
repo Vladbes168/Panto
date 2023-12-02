@@ -1,7 +1,13 @@
 .info-hint {
+    position: absolute;
+    top: -26px;
+    left: 50%;
+    transform: translate(-50%, -100%);
+
     display: flex;
+    justify-content: center;
+    padding-top: 12px;
     gap: 8px;
-    align-items: center;
     width: 112px;
     height: 56px;
     background-image: url(./../../image/icons/tooltip.svg);
@@ -9,7 +15,18 @@
 
 
 .info-hint__radio {
-
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+}
+.info-hint__radio:checked + .info-hint__radio-fake {
+    background-image: url(./../../image/icons/check-box.svg);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .info-hint__radio-fake {
     width: 24px;
