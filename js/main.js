@@ -62,3 +62,44 @@ const swiper = new Swiper('.swiper', {
     },
 
 });
+
+
+// Tabs 
+
+const tabsBtns = document.querySelectorAll("[data-tab]");
+const tabsProducts = document.querySelectorAll("[data-tab-value]");
+console.log(tabsProducts);
+
+for (let btn of tabsBtns) {
+
+    btn.addEventListener('click', function() {
+
+        //remove class active for all btn
+        for (let btn of tabsBtns) {
+            btn.classList.remove('tab-controls__btn--active');
+        }
+
+        //add active class to currently btn
+        this.classList.add('tab-controls__btn--active');
+
+
+
+
+        //Hide unnecessary products and display necessary products
+        for (let product of tabsProducts) {
+                    //Examination to all products
+        if(this.dataset.tab === 'all') {
+            product.classList.remove('none');
+        } else {
+            if(product.dataset.tabValue === this.dataset.tab) {
+                product.classList.remove('none');
+            } else {
+                product.classList.add('none');
+            }
+        }
+
+        }
+        //Update swiper
+        swiper.update();
+    });
+}
