@@ -7,5 +7,55 @@
     align-items: center;
     justify-content: center;
     gap: 65px;
-        
+
+    @include tablet () {
+        display: none;
+    }
+    .nav-list__link {
+        transition: opacity 0.2s ease-in;
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &--dropdown{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+    
+    
+            &::after {
+                content: url('./../../image/icons/arrowDown.svg');
+                height: 18px;
+            }
+    
+        }
+    }
+    }
+
+
+
+    .nav-list__item{
+        position: relative;
+        padding-bottom: 10px;
+    }
+
+
+    .nav-list__sub-nav {
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: calc(100%);
+        width: 130px;
+        transform: translate(0%, 10%);
+        transition: all 0.2s ease-in;
+        pointer-events: none;
+
+    }
+
+    .nav-list__item:hover  .nav-list__sub-nav{
+        display: block;
+        opacity: 1;
+        pointer-events: all;
+        transform: translate(0%, 0%);
+
     }

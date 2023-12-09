@@ -14,3 +14,9 @@
 .nav-list__link {
 }
 
+.nav__btn {
+    display: none;
+    @include tablet() {
+        display: block;
+    }
+}

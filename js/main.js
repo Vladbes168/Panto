@@ -68,7 +68,6 @@ const swiper = new Swiper('.swiper', {
 
 const tabsBtns = document.querySelectorAll("[data-tab]");
 const tabsProducts = document.querySelectorAll("[data-tab-value]");
-console.log(tabsProducts);
 
 for (let btn of tabsBtns) {
 
@@ -103,3 +102,24 @@ for (let btn of tabsBtns) {
         swiper.update();
     });
 }
+
+//header mobile btn
+
+const mobileNavOpenBtn = document.querySelector("#mobile-nav-open-btn");
+const mobileNavCloseBtn = document.querySelector("#close-mobile-nav");
+const mobileNav = document.querySelector(".mobile-nav-wrapper");
+
+console.log(mobileNavOpenBtn);
+console.log(mobileNav);
+console.log(mobileNavCloseBtn);
+
+mobileNavOpenBtn.onclick = function() {
+    mobileNav.classList.add('mobile-nav-wrapper--open')
+};
+mobileNavCloseBtn.onclick = function() {
+    mobileNav.classList.remove('mobile-nav-wrapper--open');
+}
+
+
+
+

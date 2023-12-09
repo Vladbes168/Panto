@@ -13,6 +13,8 @@
     <header class="header">
         <div class="container">
 
+
+
             <nav class=" header__nav nav">
                 <div class="nav__logo">
                     <a href="#!" class="logo">Panto</a>
@@ -20,7 +22,19 @@
 
 
                 <ul class="nav-list">
-                    <li class="nav-list__item"><a href="#!" class="nav-list__link">Furniture</a></li>
+                    <li class="nav-list__item">
+                        <a href="#!" class="nav-list__link nav-list__link--dropdown">Furniture</a>
+                        <div class="nav-list__sub-nav">
+                            <ul class="sub-nav">
+                                <li class="sub-nav__item"><a href="#" class="sub-nav__link">Home</a></li>
+                                <li class="sub-nav__item"><a href="#" class="sub-nav__link">Services</a></li>
+                                <li class="sub-nav__item"><a href="#" class="sub-nav__link">Products</a></li>
+                                <li class="sub-nav__item"><a href="#" class="sub-nav__link">Contacts</a></li>
+                            </ul>
+                        </div>
+
+
+                    </li>
                     <li class="nav-list__item"><a href="#!" class="nav-list__link">Shop</a></li>
                     <li class="nav-list__item"><a href="#!" class="nav-list__link">About Us</a></li>
                     <li class="nav-list__item"><a href="#!" class="nav-list__link">Contact</a></li>
@@ -32,7 +46,7 @@
                     <img class="cart__image" src="./image/icons/Bag.svg" alt="Basket">
                     <div class="cart__count">0</div>
                 </a>
-
+                <button id="mobile-nav-open-btn" class="nav__btn"><img src="/image/icons/header-btn-open.svg" alt=""></button>
             </nav>
 
 
@@ -142,8 +156,41 @@
 
         </div>
     </header>
+    
+    <div class="mobile-nav-wrapper">
+        <div class="mobile-nav-header">
+            <a href="#cart" class="mobile-cart">
+                <div class="cart">
+                    <img class="cart__image" src="./image/icons/Bag.svg" alt="Basket">
+                    <div class="cart__count">0</div>
+                </div>
+                Cart
+            </a>
 
-    <section class="benefits">
+            <button id="close-mobile-nav" class="mobile-nav-btn-close">
+                <img src="./image/icons/header-btn-shut.svg" alt="">
+            </button>
+        </div>
+        <ul class="mobile-nav">
+            <li class="mobile-nav__item">
+                <a href="#!" class="mobile-nav__link mobile-nav__link--dropdown">Furniture</a>
+                <ul class="mobile-sub-nav">
+                    <li class="mobile-sub-nav__item"><a href="#" class="mobile-sub-nav__link">Home</a></li>
+                    <li class="mobile-sub-nav__item"><a href="#" class="mobile-sub-nav__link">Services</a></li>
+                    <li class="mobile-sub-nav__item"><a href="#" class="mobile-sub-nav__link">Products</a></li>
+                    <li class="mobile-sub-nav__item"><a href="#" class="mobile-sub-nav__link">Contacts</a></li>
+                </ul>
+
+
+
+            </li>
+            <li class="mobile-nav__item"><a href="#!" class="mobile-nav__link">Shop</a></li>
+            <li class="mobile-nav__item"><a href="#!" class="mobile-nav__link">About Us</a></li>
+            <li class="mobile-nav__item"><a href="#!" class="mobile-nav__link">Contact</a></li>
+        </ul>
+    </div>
+
+    <section class="benefits none">
         <div class="containmer">
             <div class="benefits__grid">
 
@@ -186,7 +233,7 @@
         </div>
     </section>
 
-    <section class="products">
+    <section class="products none">
         <div class="container">
             <h2 class="products__title">TBest Selling Product</h2>
             <div class="products__tabs">
@@ -495,7 +542,7 @@
         </div>
     </section>
 
-    <footer class="footer">
+    <footer class="footer none">
         <div class="container container--small">
             <!-- footer grid -->
             <div class="footer__grid">
@@ -505,7 +552,8 @@
                     <div class="footer__logo">
                         <a href="#!" class="logo">Panto</a>
                     </div>
-                    <p>The advantage of hiring a workspace with us is that givees you comfortable service and all-around facilities.</p>
+                    <p>The advantage of hiring a workspace with us is that givees you comfortable service and all-around
+                        facilities.</p>
                 </div>
                 <!-- Desc -->
 
