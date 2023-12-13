@@ -8,6 +8,14 @@ for (let btn of infoBtns) {
 
 function showHint(e) {
     e.stopPropagation();
+
+    //hide all hints 
+    for (let hint of infoHints) {
+        hint.classList.add('none');
+    }
+
+
+    //Show current hints
     this.parentNode.querySelector('.info-hint').classList.toggle('none');
 
 }
@@ -39,20 +47,25 @@ const swiper = new Swiper('.swiper', {
     slidesPerView: 4,
     spaceBetween: 42,
     // breakpoints
-    // breakpoints: {
-    //     640: {
-    //         slidesPerView: 2,
-    //         spaceBetween: 20,
-    //     },
-    //     768: {
-    //         slidesPerView: 4,
-    //         spaceBetween: 40,
-    //     },
-    //     1024: {
-    //         slidesPerView: 5,
-    //         spaceBetween: 50,
-    //     },
-    // },
+    slidesPerView: 1,
+    spaceBetween: 42,
+    
+    breakpoints: {
+
+
+        600: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        920: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+        },
+        1230: {
+            slidesPerView: 4,
+            spaceBetween: 42,
+        },
+    },
 
     // Navigation arrows
 
@@ -71,7 +84,7 @@ const tabsProducts = document.querySelectorAll("[data-tab-value]");
 
 for (let btn of tabsBtns) {
 
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function () {
 
         //remove class active for all btn
         for (let btn of tabsBtns) {
@@ -86,16 +99,16 @@ for (let btn of tabsBtns) {
 
         //Hide unnecessary products and display necessary products
         for (let product of tabsProducts) {
-                    //Examination to all products
-        if(this.dataset.tab === 'all') {
-            product.classList.remove('none');
-        } else {
-            if(product.dataset.tabValue === this.dataset.tab) {
+            //Examination to all products
+            if (this.dataset.tab === 'all') {
                 product.classList.remove('none');
             } else {
-                product.classList.add('none');
+                if (product.dataset.tabValue === this.dataset.tab) {
+                    product.classList.remove('none');
+                } else {
+                    product.classList.add('none');
+                }
             }
-        }
 
         }
         //Update swiper
@@ -113,10 +126,10 @@ console.log(mobileNavOpenBtn);
 console.log(mobileNav);
 console.log(mobileNavCloseBtn);
 
-mobileNavOpenBtn.onclick = function() {
+mobileNavOpenBtn.onclick = function () {
     mobileNav.classList.add('mobile-nav-wrapper--open')
 };
-mobileNavCloseBtn.onclick = function() {
+mobileNavCloseBtn.onclick = function () {
     mobileNav.classList.remove('mobile-nav-wrapper--open');
 }
 

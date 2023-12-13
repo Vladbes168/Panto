@@ -6,6 +6,12 @@
     background-color: #eee;
 }
 
+    @include mobile(){
+    .tab-controls {
+        display: none;
+    }
+}
+
 .tab-controls__btn {
     height: 45px;
     padding: 7px 20px;
